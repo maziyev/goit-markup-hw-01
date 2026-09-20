@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStudio</title>
+    <!-- Подключаем оригинальные шрифты из макета WebStudio -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* БАЗОВЫЕ СБРОСЫ И РАЗМЕРЫ */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #434455;
+            background-color: #FFFFFF;
+            margin: 0;
+        }
+
+        ul,
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Главный контейнер-ограничитель ширины сайта */
+        .container {
+            max-width: 1158px;
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+
+        /* ШАПКА САЙТА (HEADER) */
+        .page-header {
+            height: 72px;
+            border-bottom: 1px solid #E7E9FC;
+
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.17;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #4D5AE5;
+            margin-right: 76px;
+        }
+
+        .logo-dark {
+            color: #2E2F42;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #2E2F42;
+            display: block;
+            padding: 24px 0;
+        }
+
+        .contacts {
+            font-style: normal;
+        }
+
+        .contacts-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contacts-link {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #434455;
+        }
+
+        /* БАННЕР HERO */
+        .hero-section {
+            background-color: #2E2F42;
+            height: 600px;
+            box-sizing: border-box;
+            padding-top: 188px;
+            padding-bottom: 188px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+            max-width: 496px;
+            margin: 0 auto 12px auto;
+        }
+
+        .hero-btn {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #FFFFFF;
+            background-color: #4D5AE5;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            padding: 16px 32px;
+            min-width: 169px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* СЕКЦИЯ ПРЕИМУЩЕСТВА (FEATURES) */
+        .features-section {
+            height: 344px;
+            box-sizing: border-box;
+            padding: 120px;
+            padding-bottom: 120px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            border: 0;
+            padding: 0;
+            white-space: nowrap;
+            clip-path: inset(100%);
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+        }
+
+        .features-list {
+            display: flex;
+            gap: 24px;
+        }
+
+        .features-item {
+            width: calc((100% - 72px) / 4);
+        }
+
+        .features-subtitle {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: #2E2F42;
+            margin-bottom: 8px;
+        }
+
+        .features-text {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #434455;
+        }
+
+        /* СЕКЦИЯ КОМАНДА (OUR TEAM) */
+        .team-section {
+            background-color: #F4F4FD;
+            height: 732px;
+            padding: 120px 0;
+        }
+
+        .team-title {
+            font-size: 36px;
+            line-height: 1.11;
+            text-align: center;
+            letter-spacing: 0.02em;
+            text-transform: capitalize;
+            color: #2E2F42;
+            margin-bottom: 72px;
+        }
+
+        .team-list {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+
+        }
+
+        .team-item {
+            background-color: #FFFFFF;
+            width: 264px;
+            height: 380px;
+            border-radius: 0px 0px 4px 4px;
+            box-shadow: 0px 1px 6px rgba(46, 47, 62, 0.08), 0px 1px 1px rgba(46, 47, 62, 0.16), 0px 2px 1px rgba(46, 47, 62, 0.08);
+        }
+
+        .team-meta {
+            padding: 32px 16px;
+            text-align: center;
+            height: 120;
+            background-color: #FFFFFF;
+        }
+
+        .team-subtitle {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: #2E2F42;
+            margin-bottom: 8px;
+        }
+
+        .team-text {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #434455;
+        }
+
+        /* ПОДВАЛ САЙТА (FOOTER) */
+        .page-footer {
+            background-color: #2E2F42;
+            padding: 100px 0;
+        }
+
+        .footer-logo {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.17;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #4D5AE5;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .logo-light {
+            color: #F4F4FD;
+        }
+
+        .footer-text {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #F4F4FD;
+            max-width: 264px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="page-header">
+        <div class="container header-container">
+            <nav class="header-nav">
+                <a href="./index.html" class="logo">Web<span class="logo-dark">Studio</span></a>
+                <ul class="nav-list">
+                    <li><a href="./index.html" class="nav-link">Studio</a></li>
+                    <li><a href="" class="nav-link">Features</a></li>
+                    <li><a href="" class="nav-link">Team</a></li>
+                    <li><a href="" class="nav-link">Portfolio</a></li>
+                </ul>
+            </nav>
+            <address class="contacts">
+                <ul class="contacts-list">
+                    <li><a href="mailto:info@devstudio.com" class="contacts-link">info@devstudio.com</a></li>
+                    <li><a href="tel:+110001111111" class="contacts-link">+11 (000) 111-11-11</a></li>
+                </ul>
+            </address>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секция Hero -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Effective Solutions for Your Business</h1>
+                <button type="button" class="hero-btn">Order Service</button>
+            </div>
+        </section>
+
+        <!-- Секция Преимущества (Features) -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="visually-hidden">Our Features</h2>
+                <ul class="features-list">
+                    <li class="features-item">
+                        <h3 class="features-subtitle">Strategy</h3>
+                        <p class="features-text">Our goal is to identify the business problem to walk away with the
+                            perfect and creative solution.</p>
+                    </li>
+                    <li class="features-item">
+                        <h3 class="features-subtitle">Punctuality</h3>
+                        <p class="features-text">Bring the key message to the brand's audience for the best price within
+                            the shortest possible time.</p>
+                    </li>
+                    <li class="features-item">
+                        <h3 class="features-subtitle">Diligence</h3>
+                        <p class="features-text">Research and confirm brands with the strongest digital growth
+                            opportunities and minimize risk.</p>
+                    </li>
+                    <li class="features-item">
+                        <h3 class="features-subtitle">Technologies</h3>
+                        <p class="features-text">Design practice focused on digital experiences. We bring forth a deep
+                            passion for problem-solving.</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- Секция Наша команда (Our Team) -->
+            <section class="team-section">
+                <div class="container">
+                    <h2 class="team-title">Our Team</h2>
+
+                    <ul class="team-list">
+                        <!-- Карточка 1 -->
+                        <li class="team-item">
+                            <img src="./images/Team Card.jpg" alt="Mark Guerrero" width=" 264" height="260"
+                                class="team-img">
+                            <h3 class="team-member-name">Mark Guerrero</h3>
+                            <p class="team-member-role">Product Designer</p>
+                        </li>
+
+
+
+                        <!-- Карточка 2 -->
+                        <li class="team-item">
+                            <img src="./images/team-2.jpg" alt="Tom Ford" width="264" height="260" class="team-img">
+                            <h3 class="team-member-name">Tom Ford</h3>
+                            <p class="team-member-role">Frontend Developer</p>
+                        </li>
+
+                        <!-- Карточка 3 -->
+                        <li class="team-item">
+                            <img src="./images/team-3.jpg" alt="Camila Garcia" width="264" height="260"
+                                class="team-img">
+                            <h3 class="team-member-name">Camila Garcia</h3>
+                            <p class="team-member-role">Marketing</p>
+                        </li>
+
+                        <!-- Карточка 4 -->
+                        <li class="team-item">
+                            <img src="./images/team-4.jpg" alt="Daniel Wilson" width="264" height="260"
+                                class="team-img">
+                            <h3 class="team-member-name">Daniel Wilson</h3>
+                            <p class="team-member-role">UI Designer</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <!-- Секция Наша Команда (Our Team) -->
+            <section class="team-section">
+                <div class="container">
+                    <h2 class="team-title">Our Team</h2>
+                    <ul class="team-list">
+                        <li class="team-item">
+                            <img src="./images/team-4.jpg" alt="Mark Guerrero" width="264" height="260">
+                            <div class="team-meta">
+                                <h3 class="team-subtitle">Mark Guerrero</h3>
+                                <p class="team-text">Product Designer</p>
+                            </div>
+                        </li>
+                        <li class="team-item">
+                            <img src="./images/team-3.jpg" alt="Tom Ford" width="264" height="260">
